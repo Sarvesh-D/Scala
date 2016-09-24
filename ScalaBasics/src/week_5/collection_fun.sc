@@ -2,17 +2,17 @@ package week_5
 
 object collection_fun {
 
-  val n = 7                                       //> n  : Int = 7
+  val n = 9                                       //> n  : Int = 9
   (1 until n) flatMap (x => (1 until x) map (y => (x, y))) filter (pair => NumberUtils.isPrime(pair._1 + pair._2))
                                                   //> res0: scala.collection.immutable.IndexedSeq[(Int, Int)] = Vector((2,1), (3,2
-                                                  //| ), (4,1), (4,3), (5,2), (6,1), (6,5))
+                                                  //| ), (4,1), (4,3), (5,2), (6,1), (6,5), (7,4), (7,6), (8,3), (8,5))
 
   for {
     i <- 1 until n
     j <- 1 until i
     if NumberUtils.isPrime(i + j)
   } yield (i, j)                                  //> res1: scala.collection.immutable.IndexedSeq[(Int, Int)] = Vector((2,1), (3,2
-                                                  //| ), (4,1), (4,3), (5,2), (6,1), (6,5))
+                                                  //| ), (4,1), (4,3), (5,2), (6,1), (6,5), (7,4), (7,6), (8,3), (8,5))
 
   lazy val names = List("Jeffrey Black", "Joseph Perez", "Joan Fernandez", "Judy Tucker", "Sandra Mendoza", "Walter Payne", "Sara Berry", "Thomas Wood", "Amanda Daniels", "Andrea Hart")
                                                   //> names: => List[String]
@@ -45,7 +45,7 @@ object collection_fun {
 	
 	names(1)                                  //> res6: String = Joseph Perez
 	
-	NumberUtils.nMultilpesOf(10, 17)          //> res7: List[Int] = List(17, 34, 51, 68, 85, 102, 119, 136, 153, 170)
+	NumberUtils.nMultilpesOf(10, 11)          //> res7: List[Int] = List(11, 22, 33, 44, 55, 66, 77, 88, 99, 110)
 	
 	codeCountryNameMap                        //> res8: scala.collection.immutable.Map[String,String] = Map(ID -> Indonesia, 
                                                   //| PH -> Philippines, SD -> Sudan, CL -> Chile, SE -> Sweden, CO -> Colombia, 
